@@ -1,17 +1,17 @@
 {% set name = "colcon-cmake" %}
-{% set version = "0.2.18" %}
+{% set version = "0.2.19" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://github.com/colcon/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 87b69c214c0c1ba2c5f0104f5d9ea3f4c58ef1988fc4f62fe47fe96911bd7c34
+  sha256: 785ec680b0e32ecf008bcadd79256a10f12f69a52de92b2802992b01aaca7041
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
