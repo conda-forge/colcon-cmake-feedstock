@@ -1,5 +1,5 @@
 {% set name = "colcon-cmake" %}
-{% set version = "0.2.25" %}
+{% set version = "0.2.26" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/colcon/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 1ad5781d4add325971bdbb5076894da9ddeb226d8b60f8564b47a297862a6cd5
+  sha256: 5e392f1fe1dc6870d7f67859c233946b2383b75c4bc989ef751b8befe0152b95
 
 build:
   number: 0
