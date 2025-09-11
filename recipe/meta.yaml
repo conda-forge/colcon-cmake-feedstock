@@ -10,21 +10,24 @@ source:
   sha256: b51f2de876703c665d0a0f196e4019effdc39bc6a6e44d00ba25e9afdc3d658d
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python {{ python_min }}
+    - setuptools
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - colcon-core
     - colcon-library-path
     - colcon-test-result >=0.3.3
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - {{ name.replace("-", "_") }}
 
@@ -37,5 +40,6 @@ about:
 
 extra:
   recipe-maintainers:
+    - j-rivero
     - seanyen
     - wolfv
